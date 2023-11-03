@@ -88,27 +88,27 @@ class Quadratic_SGM_Test:
 
         fig, ([ax1, ax2], [ax3, ax4]) = plt.subplots(2, 2, sharex=True)        
         
-        ax1.set_title('SGM')
-        ax1.set_ylabel('Error')                
+        ax1.set_title('MGE')
+        ax1.set_ylabel('Erro')                
         ax1.plot(it_array, err_array)               
 
-        ax2.set_title('SGM - Zoomed in')         
+        ax2.set_title('MGE - Zoomed in')         
         ax2.axis([0, len(it_array), 0, 0.2])                     
         ax2.plot(it_array, err_array)        
         
-        ax3.set_title('SGM vs Gradient')
-        ax3.set_xlabel('Iterations')
-        ax3.set_ylabel('Error')        
+        ax3.set_title('MGE vs Gradiente')
+        ax3.set_xlabel('Iterações')
+        ax3.set_ylabel('Erro')        
         ax3.plot(it_array, err_array) 
         ax3.plot(it_array, error_array_grad)
-        ax3.legend(['SGM', 'Gradient'], loc='upper right')
+        ax3.legend(['MGE', 'Gradiente'], loc='upper right')
 
-        ax4.set_title('SGM vs Gradient - Zoomed in')
-        ax4.set_xlabel('Iterations')          
+        ax4.set_title('MGE vs Gradiente - Zoomed in')
+        ax4.set_xlabel('Iterações')          
         ax4.axis([0, len(it_array), 0, 0.2])                     
         ax4.plot(it_array, err_array)
         ax4.plot(it_array, error_array_grad)
-        ax4.legend(['SGM', 'Gradient'], loc='upper right')
+        ax4.legend(['MGE', 'Gradiente'], loc='upper right')
 
         for ax in fig.get_axes():
             ax.grid()            
@@ -131,9 +131,9 @@ class Quadratic_SGM_Test:
         fig, ax1 = plt.subplots()
 
         ax1.grid()
-        ax1.set_title('SGM')
-        ax1.set_xlabel('Iterations')
-        ax1.set_ylabel('Expected Value')        
+        ax1.set_title('MGE')
+        ax1.set_xlabel('Iterações')
+        ax1.set_ylabel('Valor Esperado')        
         ax1.plot(it_array, mean_error_array, color='teal')
 
         plt.show()
