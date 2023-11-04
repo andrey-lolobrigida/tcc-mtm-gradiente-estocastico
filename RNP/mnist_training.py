@@ -19,7 +19,7 @@ from alive_progress import alive_bar
 
 (train_X, train_y), (test_X, test_y) = mnist.load_data()
 
-layers_list = [784,196,49,10]
+layers_list = [784,32,32,10]
 epochs_number = 5
 learning_rate = 0.1
 training_set = [train_X, train_y]
