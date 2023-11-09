@@ -86,10 +86,14 @@ class Quadratic_SGM_Test:
         print('Function value at x: ' + str(f))
         print('Theoretical global minima: ' + str(theoretical_minima))
 
-        fig, ([ax1, ax2], [ax3, ax4]) = plt.subplots(2, 2, sharex=True)        
+        fig, ([ax1, ax2], [ax3, ax4]) = plt.subplots(2, 2, sharex=True)
+
+        plt.rc('axes', titlesize=22)        
+        plt.rc('legend', fontsize=14)                       
         
         ax1.set_title('MGE')
-        ax1.set_ylabel('Erro')                
+        ax1.set_ylabel('Erro')
+        ax1.yaxis.label.set_fontsize(18)               
         ax1.plot(it_array, err_array)               
 
         ax2.set_title('MGE - Zoomed in')         
@@ -98,13 +102,16 @@ class Quadratic_SGM_Test:
         
         ax3.set_title('MGE vs Gradiente')
         ax3.set_xlabel('Iterações')
-        ax3.set_ylabel('Erro')        
+        ax3.set_ylabel('Erro')
+        ax3.xaxis.label.set_fontsize(18)
+        ax3.yaxis.label.set_fontsize(18)         
         ax3.plot(it_array, err_array) 
         ax3.plot(it_array, error_array_grad)
         ax3.legend(['MGE', 'Gradiente'], loc='upper right')
 
         ax4.set_title('MGE vs Gradiente - Zoomed in')
-        ax4.set_xlabel('Iterações')          
+        ax4.set_xlabel('Iterações')
+        ax4.xaxis.label.set_fontsize(18)            
         ax4.axis([0, len(it_array), 0, 0.2])                     
         ax4.plot(it_array, err_array)
         ax4.plot(it_array, error_array_grad)
@@ -130,10 +137,15 @@ class Quadratic_SGM_Test:
 
         fig, ax1 = plt.subplots()
 
+        plt.rc('axes', titlesize=22)        
+        plt.rc('legend', fontsize=14) 
+
         ax1.grid()
         ax1.set_title('MGE')
         ax1.set_xlabel('Iterações')
-        ax1.set_ylabel('Valor Esperado')        
+        ax1.set_ylabel('Média dos Erros')
+        ax1.xaxis.label.set_fontsize(18)
+        ax1.yaxis.label.set_fontsize(18)         
         ax1.plot(it_array, mean_error_array, color='teal')
 
         plt.show()
