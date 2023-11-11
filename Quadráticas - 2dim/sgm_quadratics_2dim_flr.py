@@ -1,7 +1,7 @@
 # test script for the Stochastic Gradient Method (SGM)
 # with fixed stepsize
 #
-# here, we use a quadratic of the form f = (sum_i[(x-a_i)^2])/n + (sum_j[(y-b_i)^2])/n
+# here, we use a quadratic of the form f = (sum_i[(x-a_i)^2])/n + (sum_i[(y-b_i)^2])/n
 # where the a_i`s and b_i`s are points in the linspace of [-1,1] and n the number of points
 #
 # INPUT:
@@ -36,8 +36,8 @@ class Quadratic_SGM_Test:
         
         for i in range(0, self.it):
 
-            # select a random coefficient a_j, and therefore a 
-            # random function fij = (x - a_i)^2 + (y - a_j)^2 as an estimator of f
+            # select a random coefficient a_i and b_i, and therefore a 
+            # random function fij = (x - a_i)^2 + (y - b_i)^2 as an estimator of f
             a_coefficient = np.random.choice(coefficients_array)
             b_coefficient = np.random.choice(coefficients_array)
 
@@ -46,7 +46,7 @@ class Quadratic_SGM_Test:
             x_array[i] = p[0]
             y_array[i] = p[1]
 
-            # computing gradient of fj
+            # computing gradient of fi
             gradient = np.array([2*(p[0] - a_coefficient), 2*(p[1] - b_coefficient)])            
 
             # the iterate update            
